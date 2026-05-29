@@ -1,0 +1,19 @@
+{
+  "name": "mainframe-research",
+  "version": "1.0.0",
+  "description": "Mainframe Research — MOMCI 2026 site and survey API",
+  "main": "app.js",
+  "scripts": {
+    "build": "echo \"No build step required\"",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.19.2",
+    "mysql2": "^3.22.4",
+    "nodemailer": "^6.9.13"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOMCI 2026 — Mainframe Research</title>
+  <meta name="description" content="The Mainframe Professional Infrastructure & Operational Maturity Index. A Substrata Research diagnostic instrument. Launching 2026." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ============================================================
+       MOMCI PAGE — Mobile-first
+       ============================================================ */
+
+    /* --- Hero: single column on mobile ---------------------- */
+    .momci-hero-wrap {
+      position: relative;
+      border-bottom: 1px solid #E8E8E8;
+    }
+
+    .momci-hero {
+      padding: 40px 20px 52px;
+    }
+
+    .momci-hero-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .momci-hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .momci-hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* Scroll cue — desktop only (mobile users scroll naturally) */
+    .scroll-cue {
+      display: none;
+    }
+
+    /* --- Domain block --------------------------------------- */
+    .domain-block {
+      padding: 0 20px 56px;
+    }
+
+    .domain-intro {
+      padding: 48px 20px 24px;
+      border-top: 1px solid #E8E8E8;
+    }
+
+    /* Domain rows: single column on mobile */
+    .domain-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 36px 0;
+      border-top: 1px solid #E8E8E8;
+    }
+    .domain-row:last-of-type { border-bottom: 1px solid #E8E8E8; }
+
+    /* Mobile: domain index as a compact badge */
+    .domain-index {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #999;
+      text-transform: uppercase;
+    }
+    .domain-index span {
+      font-size: 16px;
+      font-weight: 900;
+      color: #DADADA;
+      letter-spacing: -0.01em;
+    }
+
+    .domain-content .domain-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #007BFF;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .domain-content h3 {
+      font-size: clamp(18px, 4vw, 21px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .domain-content p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 14px;
+    }
+    .domain-content p strong { color: #000; font-weight: 600; }
+    .domain-content p:last-of-type { margin-bottom: 0; }
+
+    .construct-list {
+      list-style: none;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .construct-list li {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #444;
+      border: 1.5px solid #E8E8E8;
+      padding: 7px 14px;
+      text-transform: uppercase;
+    }
+
+    /* --- Rationale block ------------------------------------ */
+    .rationale-block {
+      background: #000;
+      color: #fff;
+      padding: 64px 20px;
+    }
+
+    .rationale-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .rationale-inner .r-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #007BFF;
+      margin-bottom: 16px;
+    }
+    .rationale-inner h2 {
+      font-size: clamp(24px, 6vw, 38px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .rationale-inner p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #999;
+      margin-bottom: 18px;
+    }
+    .rationale-inner p strong { color: #fff; font-weight: 600; }
+    .rationale-inner p:last-child { margin-bottom: 0; }
+
+    .rationale-right {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .rationale-stat {
+      border-left: 3px solid #007BFF;
+      padding-left: 20px;
+    }
+    .rationale-stat .rs-num {
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .rationale-stat .rs-label {
+      font-size: 14px;
+      color: #999;
+      line-height: 1.65;
+    }
+
+    /* --- Three-layer framework ------------------------------ */
+    .layer-strip {
+      padding: 56px 20px;
+    }
+
+    .layer-intro-text {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
+
+    .layer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      background: #E8E8E8;
+      border: 1px solid #E8E8E8;
+      margin-top: 32px;
+    }
+    .layer-panel { background: #fff; padding: 28px 24px; }
+    .layer-panel.active { background: #000; color: #fff; }
+    .layer-panel h4 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    .layer-panel.active h4 { color: #007BFF; }
+    .layer-panel h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .layer-panel.active h3 { color: #fff; }
+    .layer-panel p { font-size: 14px; line-height: 1.8; color: #444; }
+    .layer-panel.active p { color: #999; }
+    .layer-panel.active p strong { color: #fff; }
+
+    /* --- Methodology strip ---------------------------------- */
+    .method-strip {
+      background: #F5F5F5;
+      border-top: 1px solid #E8E8E8;
+      border-bottom: 1px solid #E8E8E8;
+    }
+    .method-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      background: #E8E8E8;
+    }
+    .method-panel { background: #F5F5F5; padding: 28px 20px; }
+    .method-panel h4 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 12px;
+    }
+    .method-panel p { font-size: 14px; line-height: 1.8; color: #444; }
+    .method-panel p strong { color: #000; }
+
+
+    /* ============================================================
+       TABLET — min-width: 640px
+       ============================================================ */
+    @media (min-width: 640px) {
+
+      .momci-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 48px;
+        padding: 56px 28px 64px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .momci-hero-label { grid-column: 1 / -1; }
+      .momci-hero-left  { grid-column: 1; margin-bottom: 0; }
+      .momci-hero-right { grid-column: 2; justify-content: flex-end; padding-top: 8px; }
+
+      .domain-intro { padding: 64px 28px 28px; }
+      .domain-block { padding: 0 28px 72px; }
+
+      .domain-row {
+        grid-template-columns: 72px 1fr;
+        gap: 0 40px;
+        padding: 48px 0;
+      }
+
+      /* Desktop-style index column */
+      .domain-index {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding-top: 4px;
+      }
+      .domain-index span {
+        display: block;
+        font-size: 32px;
+        letter-spacing: -0.02em;
+      }
+
+      .rationale-block { padding: 72px 28px; }
+      .rationale-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: start;
+      }
+      .rationale-right { padding-top: 48px; }
+      .rationale-stat .rs-num { font-size: 44px; }
+
+      .layer-strip { padding: 72px 28px; }
+      .layer-grid { grid-template-columns: repeat(3, 1fr); margin-top: 40px; }
+      .layer-panel { padding: 36px 28px; }
+
+      .method-grid { grid-template-columns: repeat(3, 1fr); }
+      .method-panel { padding: 36px 28px; }
+    }
+
+
+    /* ============================================================
+       DESKTOP — min-width: 1024px
+       ============================================================ */
+    /* Independence block responsive padding */
+    @media (min-width: 640px) {
+      .independence-inner { padding-left: 28px !important; padding-right: 28px !important; }
+    }
+    @media (min-width: 1024px) {
+      .independence-inner { padding-left: 40px !important; padding-right: 40px !important; }
+    }
+
+    @media (min-width: 1024px) {
+
+      .momci-hero {
+        column-gap: 80px;
+        padding: 72px 40px 64px;
+      }
+
+      /* Scroll cue: visible on desktop, positioned at bottom of hero */
+      .scroll-cue {
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+        transition: opacity 0.4s ease;
+      }
+
+      .scroll-cue.hidden { opacity: 0; }
+
+      .scroll-cue svg {
+        animation: bob 2.4s ease-in-out infinite;
+      }
+
+      @keyframes bob {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(6px); }
+      }
+
+      .domain-intro {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 72px 40px 32px;
+      }
+
+      .domain-block {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 40px 80px;
+      }
+
+      .domain-row {
+        grid-template-columns: 80px 1fr;
+        gap: 0 48px;
+        padding: 52px 0;
+      }
+      .domain-index span { font-size: 40px; }
+      .domain-content p { max-width: 740px; }
+
+      .rationale-block { padding: 80px 40px; }
+      .rationale-inner { max-width: 1100px; margin: 0 auto; gap: 80px; }
+      .rationale-right { padding-top: 52px; }
+
+      .layer-strip {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 80px 40px;
+      }
+      .layer-panel { padding: 40px 36px; }
+
+      .method-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .method-panel { padding: 40px 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-brand">Mainframe Research</span>
+  <ul class="header-nav">
+    <li><a href="index.html">01 Overview</a></li>
+    <li><a href="momci.html" class="active">02 MOMCI 2026</a></li>
+    <li><a href="about.html">03 About</a></li>
+  </ul>
+  <a href="https://substrataresearch.com" target="_blank" rel="noopener" class="header-external">Substrata Research ↗</a>
+  <button class="hamburger" id="hamburger" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">01 Overview</a>
+  <a href="momci.html">02 MOMCI 2026</a>
+  <a href="about.html">03 About</a>
+  <a href="https://substrataresearch.com" target="_blank" rel="noopener" class="text-blue">Substrata Research ↗</a>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <div class="momci-hero-wrap">
+  <section class="momci-hero">
+
+    <!-- Full-width label row -->
+    <p class="hero-label momci-hero-label">Mainframe Professional Infrastructure &amp; Operational Maturity Index</p>
+
+    <!-- Left: title + launching soon -->
+    <div class="momci-hero-left">
+      <h1 style="font-size:clamp(40px,5.5vw,72px);font-weight:900;letter-spacing:-0.02em;line-height:1.05;margin-bottom:4px;">
+        MOMCI 2026
+      </h1>
+      <p class="hero-sub" style="margin-bottom:0;">Launching Soon</p>
+      <div class="hero-divider" style="margin-top:20px;margin-bottom:0;"></div>
+    </div>
+
+    <!-- Right: description + single CTA -->
+    <div class="momci-hero-right">
+      <p style="font-size:16px;line-height:1.85;color:#444;max-width:480px;">
+        The first structured diagnostic instrument designed to reach the
+        <strong>substrata layer</strong> of mainframe operations — the behavioral
+        dynamics, dark data, and human-system interaction that conventional tooling
+        does not collect and standard analysis does not reach.
+      </p>
+      <div>
+        <a href="about.html" class="btn btn-ghost">About the Research →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="scroll-cue" id="scrollCue">
+    <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L11 12L21 1" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  </div>
+
+  <!-- RATIONALE BLOCK -->
+  <div class="rationale-block">
+    <div class="rationale-inner">
+      <div>
+        <p class="r-label">Why This Index Exists</p>
+        <h2>The data that determines platform risk is not being collected.</h2>
+        <p>
+          Mainframe observability is technically advanced and organizationally blind.
+          Organizations monitor every subsystem with precision while having no instrument
+          to measure the operational sustainability of the team carrying the platform —
+          or the <strong>dark data</strong> that team generates and never surfaces.
+        </p>
+        <p>
+          Dark data in mainframe operations includes: informal escalation protocols that
+          exist nowhere in documentation, tacit decision-making logic held by one or two
+          engineers who cannot be replaced, undisclosed workarounds that are the actual
+          reason a subsystem is stable, and behavioral indicators of team stress that
+          precede platform events by weeks or months.
+        </p>
+        <p>
+          <strong>None of this appears in a dashboard. All of it is real.
+          All of it is measurable. The MOMCI Index measures it.</strong>
+        </p>
+      </div>
+      <div class="rationale-right">
+        <div class="rationale-stat">
+          <div class="rs-num">~60%</div>
+          <div class="rs-label">Estimated proportion of mainframe operational time that is reactive rather than proactive, based on preliminary practitioner data. This figure does not appear in any organizational report.</div>
+        </div>
+        <div class="rationale-stat">
+          <div class="rs-num">1 in 2</div>
+          <div class="rs-label">Practitioners expected to report informal escalation contact outside their formal on-call rotation — shadow load that is organizationally invisible and operationally real.</div>
+        </div>
+        <div class="rationale-stat">
+          <div class="rs-num">0</div>
+          <div class="rs-label">Existing published instruments designed specifically to measure mainframe operational maturity, practitioner sustainability, and the behavioral layer of platform risk.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THREE ANALYSIS LAYERS -->
+  <div class="layer-strip">
+    <p class="section-label">Analytical Framework</p>
+    <h2 style="font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:12px;">Where the MOMCI Index Operates</h2>
+    <p style="font-size:16px;color:#444;line-height:1.8;max-width:680px;">
+      The Substrata Research framework identifies three layers of organizational reality.
+      Conventional analysis reaches the first two. The MOMCI Index is designed to reach the third.
+    </p>
+    <div class="layer-grid">
+      <div class="layer-panel">
+        <h4>Layer 01 — Surface</h4>
+        <h3>Performance KPIs &amp; Management Reporting</h3>
+        <p>Uptime figures, incident counts, SLA metrics, cost reports. High visibility, low fidelity. This data reflects what organizations intend to report — not the underlying operational state. Valid, and the least predictive layer available.</p>
+      </div>
+      <div class="layer-panel">
+        <h4>Layer 02 — Strata</h4>
+        <h3>Operational Logs, Configuration State &amp; Technical Debt</h3>
+        <p>Runbooks, change logs, unresolved ticket queues, configuration drift, undocumented dependencies. Accessible but requiring deliberate excavation. Technical debt accumulates here invisibly until it reaches failure threshold.</p>
+      </div>
+      <div class="layer-panel active">
+        <h4>Layer 03 — substrata</h4>
+        <h3>Human-System Interaction, Behavioral Dynamics &amp; Dark Data</h3>
+        <p><strong>The determinative layer.</strong> Knowledge concentration risk, tacit decision-making protocols, cognitive load distribution, behavioral patterns under operational pressure, and data the organization generates but has never collected. Root cause almost always traces here. <strong>This is where the MOMCI Index operates.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOMAIN STRUCTURE -->
+  <div class="domain-intro">
+    <p class="section-label">Instrument Architecture</p>
+    <h2 style="font-size:clamp(26px,4vw,44px);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:12px;">Five Research Domains</h2>
+    <p style="font-size:16px;color:#444;line-height:1.8;max-width:700px;margin-bottom:0;">
+      Each domain isolates a distinct class of operational and behavioral signal.
+      The sequence is deliberate — moving from verifiable identity data through quantitative
+      toil constructs, sustainability indicators, cultural posture assessment, and finally
+      to practitioner-defined resiliency gaps that no external audit can replicate.
+    </p>
+  </div>
+
+  <div class="domain-block">
+
+    <div class="domain-row">
+      <div class="domain-index">Domain<span>01</span></div>
+      <div class="domain-content">
+        <span class="domain-tag">Technical Identity &amp; Role Architecture</span>
+        <h3>Who is actually operating the platform — and how is that knowledge distributed?</h3>
+        <p>
+          Before any operational pattern can be correctly interpreted, the instrument must
+          establish the distribution of expertise, the structural composition of the team,
+          and the degree to which critical knowledge is concentrated in individuals rather
+          than embedded in systems or documentation.
+        </p>
+        <p>
+          This domain captures seniority distribution, primary role classification, and
+          team architecture — integrated, segmented, or siloed. It also captures practitioner-defined
+          areas of deepest expertise in open-text form. That last construct is analytically
+          significant: free-text expertise mapping surfaces <strong>knowledge concentration risk</strong>
+          that a fixed taxonomy would obscure. When two or three engineers across an organization
+          share a single specialization, that pattern is a platform risk — whether or not it
+          appears in any workforce report.
+        </p>
+        <ul class="construct-list">
+          <li>Seniority Distribution</li>
+          <li>Role Classification</li>
+          <li>Team Architecture</li>
+          <li>Knowledge Concentration Risk</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="domain-row">
+      <div class="domain-index">Domain<span>02</span></div>
+      <div class="domain-content">
+        <span class="domain-tag">Operational Workflow &amp; Toil Composition</span>
+        <h3>What does the operational work actually consist of — and how much of it is invisible?</h3>
+        <p>
+          Toil is the operational labor that is reactive, manual, and tactically necessary
+          but strategically inert. Its accumulation is the primary signal of a platform
+          organization under systemic stress. It does not appear in uptime metrics.
+          It is not reported upward. It is, by definition, <strong>dark data</strong> —
+          generated continuously, never collected.
+        </p>
+        <p>
+          This domain quantifies the practitioner's time allocation between reactive
+          firefighting and proactive engineering, and the frequency of direct terminal-level
+          manual intervention to resolve alerts. The intervention frequency construct is a
+          specific proxy for automation deficit — measuring not whether automation exists
+          in principle, but whether it is available at the actual moment of operational demand.
+          The gap between those two conditions is where toil accumulates.
+        </p>
+        <ul class="construct-list">
+          <li>Reactive / Proactive Toil Ratio</li>
+          <li>Manual Intervention Frequency</li>
+          <li>Automation Availability at Point of Need</li>
+          <li>Dark Data Signal: Unreported Operational Load</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="domain-row">
+      <div class="domain-index">Domain<span>03</span></div>
+      <div class="domain-content">
+        <span class="domain-tag">Workload Distribution &amp; Operational Sustainability</span>
+        <h3>How is operational workload distributed — and do practitioners consider it sustainable?</h3>
+        <p>
+          Workload distribution across mainframe teams is rarely uniform and rarely
+          documented accurately. This domain examines how operational responsibilities
+          are allocated across roles, where informal workload accumulates beyond what
+          any workforce plan accounts for, and whether practitioners consider their
+          current load sustainable. Unsustainable workload is a direct retention risk —
+          and a barrier to bringing new practitioners into the field, as the conditions
+          experienced by existing staff shape how the role is perceived and whether
+          it can realistically be filled.
+        </p>
+        <ul class="construct-list">
+          <li>Workload Distribution by Role</li>
+          <li>Informal Escalation Frequency</li>
+          <li>Practitioner Sustainability Rating</li>
+          <li>Retention Risk Signal</li>
+          <li>Hiring Barrier Indicator</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="domain-row">
+      <div class="domain-index">Domain<span>04</span></div>
+      <div class="domain-content">
+        <span class="domain-tag">Organizational Innovation Posture</span>
+        <h3>How does the organization handle improvement and modernization — and how easy or hard is it for practitioners to drive change?</h3>
+        <p>
+          Organizational culture is not what an organization says about itself.
+          It is the aggregate pattern of decisions made under operational pressure.
+          Self-reported culture assessments produce the culture the organization
+          wishes to have. Scenario-based instrumentation produces the culture it
+          actually operates under.
+        </p>
+        <p>
+          This domain uses scenarios to assess how improvement efforts are received —
+          whether automation proposals move forward or stall, whether modernization
+          is structurally supported or organizationally resisted, and what friction
+          practitioners encounter when they identify a better way to operate the platform.
+        </p>
+        <ul class="construct-list">
+          <li>Automation Adoption Posture</li>
+          <li>Modernization Friction</li>
+          <li>Improvement Pathway Accessibility</li>
+          <li>Organizational Change Resistance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="domain-row">
+      <div class="domain-index">Domain<span>05</span></div>
+      <div class="domain-content">
+        <span class="domain-tag">Practitioner-Defined Resiliency Gaps</span>
+        <h3>What would the people operating the platform change — if given the authority to act?</h3>
+        <p>
+          The Index closes with a single open construct: given total operational autonomy,
+          what one technical process change would most improve platform resiliency?
+          This is the instrument's most analytically significant domain.
+        </p>
+        <p>
+          Practitioners who operate a system under pressure daily possess diagnostic knowledge
+          that no external audit, vendor assessment, or management report can replicate.
+          The gap between what they would prioritize and what the organization has chosen
+          to address is a direct measure of <strong>organizational alignment risk</strong>.
+          When that gap is wide and consistent across respondents, it is not an opinion.
+          It is a finding.
+        </p>
+        <p>
+          Responses are coded and synthesized using Substrata Research Methodologies
+          to surface systemic patterns without attribution. The result is the qualitative
+          core of the published findings — the practitioner voice, surfaced systematically,
+          analyzed without identity.
+        </p>
+        <ul class="construct-list">
+          <li>Practitioner-Identified Process Gaps</li>
+          <li>Resiliency Priority Mapping</li>
+          <li>Organizational Alignment Delta</li>
+          <li>Qualitative Synthesis Corpus</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- METHODOLOGY STRIP -->
+  <div class="method-strip">
+    <div class="method-grid">
+      <div class="method-panel">
+        <h4>Instrument Design</h4>
+        <p>
+          The MOMCI Index is a <strong>mixed-method instrument</strong> — quantitative
+          constructs for distributional analysis, scenario-based items for behavioral
+          inference, and open narrative for qualitative synthesis. Each modality
+          is load-justified. No single approach is sufficient to reach the substrata layer.
+        </p>
+      </div>
+      <div class="method-panel">
+        <h4>Participant Burden</h4>
+        <p>
+          The instrument is designed for <strong>8–12 minutes</strong> of practitioner
+          time. Every item maps to a specific analytical construct. Items that could not
+          be shown to produce independently meaningful findings were excluded at the
+          design stage — not reduced, excluded.
+        </p>
+      </div>
+      <div class="method-panel">
+        <h4>Identity &amp; Verification</h4>
+        <p>
+          Participant authenticity is confirmed via the <strong>ICVP</strong> —
+          Identity-Centric Verification Protocol. Credentials are verified at entry.
+          Identity is structurally decoupled from the analysis record by schema design,
+          not policy. The dataset cannot be re-identified.
+          Full verification details available on request.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDEPENDENCE -->
+  <div style="border-top:1px solid #E8E8E8;">
+    <div style="max-width:1100px;margin:0 auto;padding:56px 20px;" class="independence-inner">
+      <p class="section-label">Research Independence</p>
+      <p style="font-size:clamp(18px,2.5vw,24px);font-weight:800;letter-spacing:-0.01em;line-height:1.2;margin-bottom:20px;max-width:760px;">
+        No vendor affiliation. No commercial mandate. No product to validate.
+      </p>
+      <p style="font-size:15px;line-height:1.9;color:#444;max-width:760px;margin-bottom:0;">
+        Mainframe Research is not affiliated with, funded by, or contracted to any platform
+        vendor, hardware manufacturer, system integrator, or organization with a commercial
+        stake in the findings. Most mainframe research is produced under exactly those
+        conditions — which is why its conclusions are predictable before the data is
+        collected. This instrument was built outside that structure. The findings will
+        reflect what practitioners actually report, not what any sponsor needs them to say.
+      </p>
+    </div>
+  </div>
+
+  <!-- PRIVACY -->
+  <div class="section" style="padding-bottom:48px;">
+    <div class="privacy-banner">
+      <strong>Data Commitment:</strong> The MOMCI Index tracks systemic behavior, not individuals.
+      Identity is decoupled from the analysis record at the architectural level — not as a
+      policy commitment, but as a structural constraint. Policy can be changed. Schema design cannot
+      be changed without detection. Participation is voluntary. The published dataset is
+      structurally non-attributable.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-brand">Mainframe Research</span>
+  <ul class="footer-links">
+    <li><a href="momci.html">MOMCI 2026</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="https://substrataresearch.com" target="_blank" rel="noopener">Substrata Research ↗</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Mainframe Research / Substrata Research</span>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  const cue = document.getElementById('scrollCue');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) cue.classList.add('hidden');
+    else cue.classList.remove('hidden');
+  }, { passive: true });
+</script>
+</body>
+</html>

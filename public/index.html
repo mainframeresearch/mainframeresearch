@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mainframe Research — The People Behind the Platform</title>
+  <meta name="description" content="Applying Substrata Research Methodologies to understand how mainframe teams actually work — their culture, their constraints, and their capacity for change." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Mobile: natural scroll, full content readable */
+    .hero-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 48px 20px 72px;
+    }
+
+    /* Paragraph spacing inside hero body */
+    .hero-body p + p {
+      margin-top: 16px;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-body p + p { margin-top: 12px; }
+    }
+
+    /* Desktop: single full-viewport, no scroll */
+    @media (min-width: 1024px) {
+      html, body { height: 100%; overflow: hidden; }
+      .hero-page {
+        height: 100vh;
+        justify-content: center;
+        padding: 0 40px;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-brand">Mainframe Research</span>
+  <ul class="header-nav">
+    <li><a href="index.html" class="active">01 Overview</a></li>
+    <li><a href="momci.html">02 MOMCI 2026</a></li>
+    <li><a href="about.html">03 About</a></li>
+  </ul>
+  <a href="https://substrataresearch.com" target="_blank" rel="noopener" class="header-external">
+    Substrata Research ↗
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">01 Overview</a>
+  <a href="momci.html">02 MOMCI 2026</a>
+  <a href="about.html">03 About</a>
+  <a href="https://substrataresearch.com" target="_blank" rel="noopener" class="text-blue">Substrata Research ↗</a>
+</nav>
+
+<main>
+  <div class="hero-page">
+    <p class="hero-label">A Substrata Research Initiative</p>
+    <h1>The People Behind the Platform.</h1>
+    <p class="hero-sub">Active Research &nbsp;/&nbsp; 2026</p>
+    <div class="hero-divider"></div>
+    <div class="hero-body">
+      <p>
+        Mainframe infrastructure sustains some of the most critical workloads on the planet.
+        The engineers who operate it are among the least measured by the organizations that
+        depend on them. This research project applies <strong>Substrata Research
+        Methodologies</strong> to understand how mainframe teams actually work — their
+        culture, their constraints, and their capacity for change.
+      </p>
+      <p>
+        Beginning with structured discovery and moving through qualitative interviews —
+        the goal is a clear, evidence-based picture of where the mainframe ecosystem
+        stands today, and what conditions support its continued evolution.
+      </p>
+      <p>
+        The research is fully independent — no vendor affiliation, no commercial mandate,
+        no product to validate. Findings are published openly and belong to the practitioner
+        community.
+      </p>
+    </div>
+    <div class="hero-ctas">
+      <a href="momci.html" class="btn btn-primary">Participate in MOMCI 2026</a>
+      <a href="about.html" class="btn btn-ghost">About the Research →</a>
+    </div>
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>

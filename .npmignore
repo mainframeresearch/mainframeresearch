@@ -1,0 +1,5 @@
+# Exclude these from the deployment zip
+node_modules/
+.env
+.DS_Store
+*.log

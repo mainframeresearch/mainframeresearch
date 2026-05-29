@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Library — Mainframe Research</title>
+  <meta name="description" content="Practitioner briefs linking mainframe operational patterns to actionable technical solutions and organizational change." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <span class="header-brand">Mainframe Research</span>
+  <ul class="header-nav">
+    <li><a href="index.html">01 Overview</a></li>
+    <li><a href="momci.html">02 MOMCI 2026</a></li>
+    <li><a href="protocol.html">03 Protocol</a></li>
+    <li><a href="library.html" class="active">04 Library</a></li>
+    <li><a href="about.html">05 About</a></li>
+  </ul>
+  <a href="https://substrataresearch.com" target="_blank" rel="noopener" class="header-external">Substrata Research ↗</a>
+  <button class="hamburger" id="hamburger" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">01 Overview</a>
+  <a href="momci.html">02 MOMCI 2026</a>
+  <a href="protocol.html">03 Protocol</a>
+  <a href="library.html">04 Library</a>
+  <a href="about.html">05 About</a>
+  <a href="https://substrataresearch.com" target="_blank" rel="noopener" class="text-blue">Substrata Research ↗</a>
+</nav>
+
+<main>
+  <div class="library-wrap">
+
+    <p class="hero-label" style="margin-bottom:16px;">Technical Library</p>
+    <h1 style="font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-0.02em;line-height:1.1;margin-bottom:16px;">
+      Practitioner Briefs
+    </h1>
+    <div class="hero-divider"></div>
+    <p style="font-size:17px;color:#444;line-height:1.85;max-width:720px;">
+      Each brief links a documented operational pattern — surfaced through research — to
+      actionable technical solutions and organizational change levers. Published as findings
+      become available. New briefs are added as the MOMCI 2026 data collection phase
+      progresses.
+    </p>
+
+    <!-- Filter tags -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:36px;" id="filterBar">
+      <button class="btn btn-primary filter-btn" data-filter="all" style="padding:8px 18px;font-size:11px;">All</button>
+      <button class="btn btn-ghost filter-btn" data-filter="toil" style="padding:8px 18px;font-size:11px;">Toil &amp; Automation</button>
+      <button class="btn btn-ghost filter-btn" data-filter="culture" style="padding:8px 18px;font-size:11px;">Culture &amp; Safety</button>
+      <button class="btn btn-ghost filter-btn" data-filter="resilience" style="padding:8px 18px;font-size:11px;">Resilience</button>
+      <button class="btn btn-ghost filter-btn" data-filter="oncall" style="padding:8px 18px;font-size:11px;">On-Call</button>
+    </div>
+
+    <!-- Card grid -->
+    <div class="library-grid" id="libraryGrid">
+
+      <div class="library-card" data-tags="toil automation">
+        <span class="card-tag">Toil &amp; Automation</span>
+        <h3>The Hidden Cost of 3270 Manual Intervention</h3>
+        <p>
+          Quantifying the cognitive load and error surface introduced by direct terminal
+          commands during alert resolution. Explores why automation adoption stalls even
+          when practitioners identify the need.
+        </p>
+        <span class="card-link">Coming — Q3 2026</span>
+      </div>
+
+      <div class="library-card" data-tags="oncall resilience">
+        <span class="card-tag">On-Call &amp; Resilience</span>
+        <h3>Shadow On-Call: The Invisible Rotation</h3>
+        <p>
+          An analysis of informal escalation patterns where practitioners absorb on-call
+          load without formal recognition or compensation. Linked to burnout indicators
+          in the MOMCI sustainability index.
+        </p>
+        <span class="card-link">Coming — Q3 2026</span>
+      </div>
+
+      <div class="library-card" data-tags="culture">
+        <span class="card-tag">Culture &amp; Safety</span>
+        <h3>Blameless Post-Mortems on the Mainframe</h3>
+        <p>
+          Applying modern Site Reliability Engineering incident culture to z/OS operations.
+          Why the "operational reprimand" response to human error actively degrades
+          system resilience over time.
+        </p>
+        <span class="card-link">Coming — Q3 2026</span>
+      </div>
+
+      <div class="library-card" data-tags="toil resilience">
+        <span class="card-tag">Toil &amp; Resilience</span>
+        <h3>Silo Friction &amp; the Escalation Tax</h3>
+        <p>
+          Measuring the latency and information loss introduced by siloed team architectures
+          during incident response. Cross-referenced against MOMCI team architecture
+          classifications.
+        </p>
+        <span class="card-link">Coming — Q4 2026</span>
+      </div>
+
+      <div class="library-card" data-tags="culture oncall">
+        <span class="card-tag">Culture &amp; On-Call</span>
+        <h3>Sustainability as a Technical Metric</h3>
+        <p>
+          Reframing practitioner sustainability not as an HR concern but as a leading
+          indicator of platform risk. When experienced engineers leave, institutional
+          knowledge leaves with them.
+        </p>
+        <span class="card-link">Coming — Q4 2026</span>
+      </div>
+
+      <div class="library-card" data-tags="toil automation">
+        <span class="card-tag">Automation</span>
+        <h3>Automation Barriers: Tools vs. Culture</h3>
+        <p>
+          Disaggregating the "Lack of Tools" and "Blocked" automation response patterns
+          from MOMCI data. When is the constraint technical, and when is it organizational?
+        </p>
+        <span class="card-link">Coming — Q4 2026</span>
+      </div>
+
+    </div>
+
+    <div class="privacy-banner" style="margin-top:48px;">
+      <strong>Contributing to the Library:</strong> Findings published here are derived
+      exclusively from anonymized MOMCI 2026 survey data and follow-up interviews.
+      All briefs undergo methodology review before publication. To participate in the
+      research that feeds this library, <a href="momci.html" style="color:#007BFF;">complete the MOMCI 2026 survey</a>.
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <span class="footer-brand">Mainframe Research</span>
+  <ul class="footer-links">
+    <li><a href="protocol.html">Research Protocol</a></li>
+    <li><a href="library.html">Library</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="https://substrataresearch.com" target="_blank" rel="noopener">Substrata Research ↗</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Mainframe Research / Substrata Research</span>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Library filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.library-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // Toggle button styles
+      filterBtns.forEach(b => {
+        b.classList.remove('btn-primary');
+        b.classList.add('btn-ghost');
+      });
+      btn.classList.add('btn-primary');
+      btn.classList.remove('btn-ghost');
+
+      // Filter cards
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        if (filter === 'all' || tags.includes(filter)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Rebuild grid gaps by toggling hidden class
+      const grid = document.getElementById('libraryGrid');
+      const visible = [...cards].filter(c => c.style.display !== 'none');
+      // No-op — CSS grid handles it; display:none removes from flow
+    });
+  });
+</script>
+</body>
+</html>
